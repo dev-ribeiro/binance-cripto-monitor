@@ -4,6 +4,7 @@ import { ResultCriptoQuery } from './components/ResultCriptoQuery'
 import { SearchCripto } from './components/SearchCripto'
 
 export function Home(){
+
     return (
         <main>
             <Container className='mt-3' style={{width:'45rem'}}>
