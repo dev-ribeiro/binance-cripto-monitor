@@ -9,16 +9,16 @@ export function Header() {
     return (
         <Navbar expand="lg">
             <Container className='bg-dark rounded text-light p-2'>
-                <div className={styles.logo}>
+                <Container className={styles.logo}>
                     <img src={logo} alt="" />
                     <h1>BINANCE BOT</h1>
-                </div>
+                </Container>
                 <div className={styles.wrapper}>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link className='text-light' href="#home">Home</Nav.Link>
-                            <Nav.Link className='text-light' href="#link">Link</Nav.Link>
+                            <Nav.Link className='text-light' href="/">Home</Nav.Link>
+                            <Nav.Link className='text-light' href="/" target='_blank'>Docs</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </div>
