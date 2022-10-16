@@ -1,3 +1,4 @@
+import {FormEvent} from 'react'
 import axios from 'axios';
 import { useContext, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
@@ -13,11 +14,12 @@ export function SearchCripto() {
     }, [])
 
 
-    function handleSelectedCripto(event: SubmitEvent<HTMLFormElement>): void {
+    function handleSelectedCripto(event: FormEvent): void {
         event.preventDefault()
 
+        const resultQuery = (event.target as HTMLFormElement).query.value
         const filterCripto = criptos.filter(cripto => {
-            return cripto.symbol === event.target.query.value
+            return cripto.symbol === resultQuery
         })
 
         selectCripto(filterCripto[0])
