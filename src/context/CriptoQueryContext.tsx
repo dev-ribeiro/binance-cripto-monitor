@@ -6,8 +6,10 @@ interface Criptos {
 }
 
 interface CriptoQueryContextType {
+    activeSelectCripto: Criptos
     criptos: Criptos[]
-    handleGetDataFromBinance: (params: Criptos[]) => void
+    getDataFromBinance: (params: Criptos[]) => void
+    selectCripto: (params: Criptos) => void
 }
 
 export const CriptoQueryContext = createContext({} as CriptoQueryContextType)
@@ -18,15 +20,22 @@ interface CriptoQueryContextProviderProps {
 
 export function CriptoQueryContextProvider({ children }: CriptoQueryContextProviderProps) {
     const [criptos, setCriptos] = useState<Criptos[]>([])
+    const [activeSelectCripto, setActiveSelectCripto] = useState({} as Criptos)
 
-    function handleGetDataFromBinance(data: Criptos[]) {
+    function getDataFromBinance(data: Criptos[]) {
         setCriptos(data)
+    }
+
+    function selectCripto(cripto: Criptos) {
+        setActiveSelectCripto(cripto)
     }
 
     return (
         <CriptoQueryContext.Provider value={{
             criptos,
-            handleGetDataFromBinance
+            activeSelectCripto,
+            getDataFromBinance,
+            selectCripto
         }}>
             {children}
         </CriptoQueryContext.Provider>
