@@ -16,7 +16,11 @@ export function SearchCripto() {
     function handleSelectedCripto(event: SubmitEvent<HTMLFormElement>): void {
         event.preventDefault()
 
-        selectCripto(event.target.query.value)
+        const filterCripto = criptos.filter(cripto => {
+            return cripto.symbol === event.target.query.value
+        })
+
+        selectCripto(filterCripto[0])
     }
 
     return (
