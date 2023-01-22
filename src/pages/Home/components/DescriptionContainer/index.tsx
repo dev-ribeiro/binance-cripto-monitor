@@ -12,7 +12,9 @@ export function DescriptionContainer() {
             </Card.Title>
             <Card.Body>
               Uma aplicação React que faz requisições à API da Binance e
-              consegue obter dados de pares de moeda.
+              consegue obter dados de pares de moeda. Além disso, você pode
+              simular investimentos e projetar, dentro do escopo de tempo
+              definido, um possível retorno desse investimento.
             </Card.Body>
           </Card>
         </Col>
@@ -25,8 +27,10 @@ export function DescriptionContainer() {
             </Card.Title>
             <Card.Body>
               A aplicação utiliza como base o servidor de testes da Binance, a
-              rede Testnet. Portanto, não me responsabilizo caso seja utilizada
-              na rede principal.
+              rede Testnet, em breve implementação com a rede principal.
+              Portanto, não me responsabilizo caso seja utilizada na rede
+              principal. Além disso, operações com criptomoedas envolvem alto
+              risco, tenha isso em mente antes de fazer uma operação.
             </Card.Body>
           </Card>
         </Col>
