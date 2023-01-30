@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useState } from "react"
+import { createContext, ReactNode, useEffect, useState } from "react"
+import { api } from "../lib/axios"
 
 interface Criptos {
     symbol: string
@@ -8,7 +9,6 @@ interface Criptos {
 interface CriptoQueryContextType {
     activeSelectCripto: Criptos
     criptos: Criptos[]
-    getDataFromBinance: (params: Criptos[]) => void
     selectCripto: (params: Criptos) => void
 }
 
@@ -22,19 +22,20 @@ export function CriptoQueryContextProvider({ children }: CriptoQueryContextProvi
     const [criptos, setCriptos] = useState<Criptos[]>([])
     const [activeSelectCripto, setActiveSelectCripto] = useState({} as Criptos)
 
-    function getDataFromBinance(data: Criptos[]) {
-        setCriptos(data)
-    }
-
     function selectCripto(cripto: Criptos) {
         setActiveSelectCripto(cripto)
     }
+
+    useEffect(() => {
+        api
+            .get('/ticker/price')
+            .then(response => setCriptos(response.data))
+    }, [])
 
     return (
         <CriptoQueryContext.Provider value={{
             criptos,
             activeSelectCripto,
-            getDataFromBinance,
             selectCripto
         }}>
             {children}

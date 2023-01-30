@@ -6,13 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { CriptoQueryContext } from '../../../../context/CriptoQueryContext';
 
 export function SearchCripto() {
-    const { criptos, getDataFromBinance, activeSelectCripto, selectCripto } = useContext(CriptoQueryContext)
-
-    useEffect(() => {
-        axios.get('https://testnet.binance.vision/api/v3/ticker/price')
-            .then(response => getDataFromBinance(response.data))
-    }, [])
-
+    const { criptos, selectCripto } = useContext(CriptoQueryContext)
 
     function handleSelectedCripto(event: FormEvent): void {
         event.preventDefault()
