@@ -1,6 +1,29 @@
-# Binance BOT
+# 💲 Binance Cripto Monitor
 
-## Requisitos da aplicação
+## ✅ Sobre o projeto
 
-    - [] A aplicação deverá buscar o preço da criptomoeda desejada
-    - [] A aplicação deverá gerar uma tabela com todos os pares disponíveis e uma opção de filtro nessa tabela
+---
+
+Projeto de uma aplicação de monitoramento de criptoativos da Binance.
+
+## 📚 Aprendizados
+
+---
+
+- Integração de uma aplicação React com uma API externa, a API da Binance;
+- Gerenciamento de **params** nas rotas de posts, utilizando a lib react-router-dom;
+- Estilização da aplicação por meio de bootstrap e react-bootstrap;
+
+## 💻 Tecnologias
+
+---
+
+- React com Typescript;
+- Vite;
+- Bootstrap;
+- React-bootstrap;
+- React-router-dom.
+
+## Contato
+
+> ✉️ david.ribeiro.professional@gmail.com

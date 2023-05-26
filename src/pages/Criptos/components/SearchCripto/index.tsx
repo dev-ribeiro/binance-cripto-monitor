@@ -6,13 +6,13 @@ import { CriptoQueryContext } from '../../../../context/CriptoQueryContext'
 import { api } from '../../../../lib/axios'
 
 export function SearchCripto() {
-  const { criptos, getDataFromBinance, selectCripto } =
+  const { criptos, selectCripto } =
     useContext(CriptoQueryContext)
 
   useEffect(() => {
     api
-      .get('/v3/ticker/price')
-      .then((response) => getDataFromBinance(response.data))
+      .get('/ticker/price')
+      .then((response) => console.log(response.data))
   }, [])
 
   function handleSelectedCripto(event: FormEvent): void {
