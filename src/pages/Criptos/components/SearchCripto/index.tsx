@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { FormEvent, useContext, useEffect } from 'react'
-import axios from 'axios'
 import { Button } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import { CriptoQueryContext } from '../../../../context/CriptoQueryContext'
+import { api } from '../../../../lib/axios'
 
 export function SearchCripto() {
   const { criptos, getDataFromBinance, selectCripto } =
     useContext(CriptoQueryContext)
 
   useEffect(() => {
-    axios
-      .get('https://testnet.binance.vision/api/v3/ticker/price')
+    api
+      .get('/v3/ticker/price')
       .then((response) => getDataFromBinance(response.data))
   }, [])
 
