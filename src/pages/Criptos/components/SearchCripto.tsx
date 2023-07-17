@@ -1,13 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { FormEvent, useContext, useEffect } from 'react'
+import { FormEvent, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
-import { CriptoQueryContext } from '../../../../context/CriptoQueryContext'
-import { api } from '../../../../lib/axios'
+import { api } from '../../../lib/axios'
+import { useCriptoQuery } from '../../../hooks/useCriptoQuery'
 
 export function SearchCripto() {
-  const { criptos, selectCripto } =
-    useContext(CriptoQueryContext)
+  const { criptos, selectCripto } = useCriptoQuery();
 
   useEffect(() => {
     api

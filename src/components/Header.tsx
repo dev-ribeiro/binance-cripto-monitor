@@ -24,7 +24,7 @@ export function Header() {
               Home
             </Nav.Link>
             <Nav.Link className="text-light" href="/criptos">
-              Monitore Criptos
+              Monitoramento
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

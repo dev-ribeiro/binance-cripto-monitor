@@ -1,9 +1,9 @@
 import { useContext } from 'react'
 import { Card, Placeholder } from 'react-bootstrap'
-import { CriptoQueryContext } from '../../../../context/CriptoQueryContext'
+import { useCriptoQuery } from '../../../hooks/useCriptoQuery'
 
 export function ResultCriptoQuery() {
-  const { activeSelectCripto } = useContext(CriptoQueryContext)
+  const { activeSelectCripto } = useCriptoQuery();
 
   return (
     <Card className="m-auto" style={{ width: '18rem' }}>
