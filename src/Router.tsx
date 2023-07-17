@@ -1,24 +1,18 @@
-import { Route, Routes } from 'react-router-dom';
-import { DefaultLayout } from './layouts/DefaultLayout';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { RootLayout } from './layouts/RootLayout';
 import { Criptos } from './pages/Criptos';
 import { Home } from './pages/Home';
 
 export function Router() {
   return (
-    <Routes>
-      <Route path="/" element={<DefaultLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/criptos" element={<Criptos />} />
-      </Route>
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/criptos" element={<Criptos />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-  return (
-    <Routes>
-      <Route path="/" element={<DefaultLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/criptos" element={<Criptos />} />
-      </Route>
-    </Routes>
-  )
 }
 
