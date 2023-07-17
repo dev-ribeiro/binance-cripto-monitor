@@ -1,6 +1,6 @@
 import { QueryClientProvider } from 'react-query'
 import { Router } from './Router';
-import { CriptoQueryContextProvider } from './context/CriptoQueryContext';
+import { CriptoQueryContextProvider } from './hooks/useCriptoQuery';
 import { queryClient } from './lib/query';
 
 export default function App() {

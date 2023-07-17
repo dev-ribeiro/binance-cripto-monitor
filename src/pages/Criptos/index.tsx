@@ -1,10 +1,10 @@
-import { FormEvent, useContext, useEffect, useState } from "react";
-import { Button, Card, Container, Dropdown, Form, Spinner } from "react-bootstrap";
-import { CriptoQueryContext } from "../../context/CriptoQueryContext";
+import { FormEvent, useState } from "react";
+import { Button, Card, Container, Form, Spinner } from "react-bootstrap";
 import { api } from "../../lib/axios";
+import { useCriptoQuery } from "../../hooks/useCriptoQuery";
 
 export function Criptos() {
-    const { criptos } = useContext(CriptoQueryContext)
+    const { criptos } = useCriptoQuery();
     const [openMonitor, setOpenMonitor] = useState(false)
     const [criptoPrice, setCriptoPrice] = useState<string | null>(null);
 

@@ -1,0 +1,19 @@
+.home_container {
+  margin-top: 1rem;
+  max-width: 724px;
+}
+
+.query_container {
+  display: flex;
+  align-items: center;
+  justify-items: stretch;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+@media (max-width: 420px) {
+  .query_container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

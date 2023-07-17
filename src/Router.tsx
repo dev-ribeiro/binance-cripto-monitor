@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { RootLayout } from './layouts/RootLayout';
-import { Criptos } from './pages/Criptos';
-import { Home } from './pages/Home';
+import { Criptos } from './pages/criptos';
+import { Home } from './pages/home';
 
 export function Router() {
   return (
